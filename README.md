@@ -2,5 +2,5 @@
 
 To use:
 ```
-docker run --rm --privileged -v  /var/lib/docker/:/var/lib/docker/ -p 8080:8080 --name jenkins thommay/jenkins-docker:latest
+docker run  --privileged -v /var/run/docker.sock:/var/run/docker.sock -v  /var/lib/docker/:/var/lib/docker/ -p 8080:8080 --name jenkins -d -v /var/jenkins_home:/var/jenkins_home --restart=always thommay/jenkins-docker:latest
 ```
